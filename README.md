@@ -1,12 +1,9 @@
-# React + Vite
+TASKLY: Your Creative Productivity Space
+TASKLY is a playful space designed to help you plan, scribble, and ship your day with ease. It's the perfect companion for those who want to blend organization with creative freedom, ensuring your tasks flow as smoothly as your ideas.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+What's Inside?
+Quick Notes: Jot down thoughts, reminders, and lists in a snap.
 
-Currently, two official plugins are available:
+Visual Ideas: Sketch out your concepts and bring your ideas to life.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Seamless Planning: Keep your tasks organized and moving forward effortlessly.
