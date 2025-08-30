@@ -84,9 +84,17 @@ export default function TaskCard({ task, forceEditing=false, mode: controlledMod
 
   const currentStrokeRef = useRef(null);
   const pointerPos = (e) => {
-    const c=canvasRef.current; if(!c) return [0,0];
-    const r=c.getBoundingClientRect();
-    return [ (e.clientX|| (e.touches && e.touches[0].clientX)) - r.left, (e.clientY || (e.touches && e.touches[0].clientY)) - r.top];
+    const c = canvasRef.current; if (!c) return [0, 0];
+    const r = c.getBoundingClientRect();
+    // Calculate scale between canvas's internal size and its display size
+    const scaleX = c.width / r.width;
+    const scaleY = c.height / r.height;
+    const clientX = (e.clientX !== undefined) ? e.clientX : (e.touches && e.touches[0].clientX);
+    const clientY = (e.clientY !== undefined) ? e.clientY : (e.touches && e.touches[0].clientY);
+    return [
+      (clientX - r.left) * scaleX,
+      (clientY - r.top) * scaleY
+    ];
   };
   const startDraw = e => {
     if(mode!=='canvas') return; const c=canvasRef.current; if(!c) return;
