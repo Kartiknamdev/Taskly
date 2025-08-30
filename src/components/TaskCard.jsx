@@ -182,9 +182,16 @@ export default function TaskCard({ task, forceEditing=false, mode: controlledMod
               </div>
               <div className="flex-1">
                 <canvas
-                  ref={canvasRef}
-                  width={variant==='fullscreen'? 1000:600}
-                  height={variant==='fullscreen'? 520:220}
+                  ref={el => {
+                    if (el) {
+                      // Set canvas width/height to match display size
+                      const displayWidth = el.offsetWidth;
+                      const displayHeight = el.offsetHeight;
+                      if (el.width !== displayWidth) el.width = displayWidth;
+                      if (el.height !== displayHeight) el.height = displayHeight;
+                    }
+                    canvasRef.current = el;
+                  }}
                   onMouseDown={startDraw}
                   onMouseMove={moveDraw}
                   onMouseUp={stopDraw}
